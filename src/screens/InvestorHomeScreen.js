@@ -267,7 +267,13 @@ class InvestorHomeScreen extends Component {
   };
 
   render() {
-    const {user, projectsList, projectIndex, allDeckSwiped} = this.state;
+    const {
+      user,
+      projectsList,
+      projectIndex,
+      allDeckSwiped,
+      refresh,
+    } = this.state;
     return (
       <ScreenWrapper>
         <ScrollView>
@@ -313,7 +319,7 @@ class InvestorHomeScreen extends Component {
               </View>
               <View style={styles.projectsContainer}>
                 <Swiper
-                  rerender={this.state.refresh}
+                  rerender={refresh}
                   cards={projectsList}
                   cardIndex={projectIndex}
                   onSwiped={this._onDeckSwiped}
